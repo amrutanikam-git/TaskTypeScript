@@ -1,20 +1,17 @@
 import React from 'react'
 import { StyleSheet, View, Text, TouchableOpacity,BackHandler } from 'react-native'
 import { useFocusEffect } from '@react-navigation/native';
+import { StackActions } from '@react-navigation/native';
 
 function Screen4(props:any) {
   useFocusEffect(
     React.useCallback(() => {
-      const onBackPress = () => {
-        const { navigation } = props;
-        navigation.navigate('Screen1')
-        return true
-      };
-
-      BackHandler.addEventListener('hardwareBackPress', onBackPress);
-
-      return () =>
-        BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+     return () =>{
+       const { navigation } = props;
+       
+       navigation.replace('Screen1')
+    
+       }
     }, [])
   );
   
