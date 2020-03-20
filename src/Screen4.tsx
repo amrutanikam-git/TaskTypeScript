@@ -1,35 +1,31 @@
+import React from 'react'
+import { StyleSheet, View, Text, TouchableOpacity,BackHandler } from 'react-native'
+import { useFocusEffect } from '@react-navigation/native';
 
-import React, { Component } from 'react';
-import { Text, View,StyleSheet,TouchableOpacity,BackHandler } from 'react-native';
-
-class Screen4 extends Component {
-    componentDidMount() {
-        BackHandler.addEventListener("hardwareBackPress", this.onBackPress);
-      }
-    
-      componentWillUnmount() {
-        BackHandler.removeEventListener("hardwareBackPress", this.onBackPress);
-      }
-    
-      onBackPress = () => {
-        const { navigation } = this.props
+function Screen4(props:any) {
+  useFocusEffect(
+    React.useCallback(() => {
+      const onBackPress = () => {
+        const { navigation } = props;
         navigation.navigate('Screen 1')
-        return true;
-      }; 
-  render() {
-    const { navigation } = this.props
-    return (
-        <View style={styles.container}>
-        <Text style={styles.text}>Screen 4</Text>
-        <TouchableOpacity
-          style={styles.buttonContainer}
-          onPress={() => navigation.navigate('Screen 1')}>
-          <Text style={styles.buttonText}>Go To Screen 1</Text>
-        </TouchableOpacity>
-      </View>
-    );
-  }
+        return true
+      };
+
+      BackHandler.addEventListener('hardwareBackPress', onBackPress);
+
+      return () =>
+        BackHandler.removeEventListener('hardwareBackPress', onBackPress);
+    }, [])
+  );
+  
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Screen 4</Text>
+    
+    </View>
+  )
 }
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -55,4 +51,3 @@ const styles = StyleSheet.create({
 })
 
 export default Screen4
-

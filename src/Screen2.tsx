@@ -2,7 +2,7 @@ import React from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
 
-function Screen2(props) {
+function Screen2(props:any) {
   const { navigation } = props
   return (
     <View style={styles.container}>
