@@ -14,37 +14,28 @@ interface Screen1Props {
 function Screen1(props: Screen1Props) {
 const { count } = props;
 const chengecount=(type:string)=>{
-
+let { count, actions } = props;
 if(type=="inc")
 {
-let { count, actions } = props;
-  if(flag)
+ if(flag)
   {
     count=count+100;
     actions.changeCount(count);
   }
-    
-    props.navigation.push('Screen1')
+  props.navigation.push('Screen1')
 }
 else{
-    let { count, actions } = props;
     flag=false
     count=count-50;
     actions.changeCount(count);
-}
+ }
   }
   return (
     <View style={styles.container}>
-   
-      <Button
-          title="Win"
-          onPress={() =>chengecount("inc")}
-        />
-        <Text>{count}</Text>
-        <Button
-          title="lose"
-          onPress={() =>chengecount("dec")}
-        />
+     <Text>Your Score : {count}</Text>
+      <Button title="Win" onPress={() =>chengecount("inc")}/>
+    
+      <Button title="lose"onPress={() =>chengecount("dec")} />
      
     </View>
   );
@@ -57,20 +48,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ebebeb',
   },
-  text: {
-    color: '#101010',
-    fontSize: 24,
-    fontWeight: 'bold',
-  },
-  buttonContainer: {
-    borderRadius: 5,
-    padding: 10,
-    margin: 20,
-  },
-  buttonText: {
-    fontSize: 20,
-    color: '#000',
-  },
+
 });
 const mapStateToProps = (state:any) => ({
     count: state.count.count,

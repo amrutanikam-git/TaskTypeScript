@@ -7,7 +7,7 @@ export default function App() {
   return (
     <Provider store={store}>
        <MainStackNavigator />
-      </Provider>
+     </Provider>
   )
  
 }
