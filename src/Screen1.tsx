@@ -1,14 +1,14 @@
 import React from 'react'
 import { StyleSheet, View, Text, TouchableOpacity } from 'react-native'
 
-function Screen1(props:any) {
-  const { navigation } = props
+function Screen1({ navigation:{navigate}}:any) {
+  //const { navigation } = props
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Screen 1</Text>
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={() => navigation.navigate('Screen 2')}>
+        onPress={() => navigate('Screen2')}>
         <Text style={styles.buttonText}>Go To Screen 2</Text>
       </TouchableOpacity>
     </View>

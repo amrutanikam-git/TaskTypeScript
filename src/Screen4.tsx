@@ -7,7 +7,7 @@ function Screen4(props:any) {
     React.useCallback(() => {
       const onBackPress = () => {
         const { navigation } = props;
-        navigation.navigate('Screen 1')
+        navigation.navigate('Screen1')
         return true
       };
 

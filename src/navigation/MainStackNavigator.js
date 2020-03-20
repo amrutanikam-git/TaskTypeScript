@@ -14,10 +14,10 @@ function MainStackNavigator() {
       <Stack.Navigator
         initialRouteName='Screen1'
          headerMode='float'>
-        <Stack.Screen name='Screen 1' component={Screen1} />
-        <Stack.Screen name='Screen 2'component={Screen2} />
-        <Stack.Screen name='Screen 3'component={Screen3} />
-        <Stack.Screen name='Screen 4'component={Screen4} />
+        <Stack.Screen name='Screen1' component={Screen1} options={{ title: 'Screen 1' }} />
+        <Stack.Screen name='Screen2' component={Screen2}  options={{ title: 'Screen 2' }}/>
+        <Stack.Screen name='Screen3' component={Screen3}  options={{ title: 'Screen 3' }}/>
+        <Stack.Screen name='Screen4' component={Screen4}  options={{ title: 'Screen 4' }}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
