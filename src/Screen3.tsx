@@ -8,7 +8,7 @@ function Screen3(props:any) {
       <Text style={styles.text}>Screen 3</Text>
       <TouchableOpacity
         style={styles.buttonContainer}
-        onPress={() => navigation.navigate('Screen4')}>
+        onPress={() => navigation.replace('Screen4')}>
         <Text style={styles.buttonText}>Go To Screen 4</Text>
       </TouchableOpacity>
     </View>

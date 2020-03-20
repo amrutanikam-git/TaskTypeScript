@@ -4,22 +4,10 @@ import { useFocusEffect } from '@react-navigation/native';
 import { StackActions } from '@react-navigation/native';
 
 function Screen4(props:any) {
-  useFocusEffect(
-    React.useCallback(() => {
-     return () =>{
-       const { navigation } = props;
-       
-       navigation.replace('Screen1')
-    
-       }
-    }, [])
-  );
-  
   return (
     <View style={styles.container}>
       <Text style={styles.text}>Screen 4</Text>
-    
-    </View>
+     </View>
   )
 }
 
